@@ -10,7 +10,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 const aimlInterpreter = new AIMLInterpreter({ name: "HelloBot" });
 
-aimlInterpreter.loadAIMLFilesIntoArray(["./test-aiml.xml"]);
+aimlInterpreter.loadAIMLFilesIntoArray(["./aiml/test-aiml.xml"]);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -21,7 +21,11 @@ app.post("/webhook", (req, res) => {
   aimlInterpreter.findAnswerInLoadedAIMLFiles(
     msg,
     (answer, wildCardArray, input) => {
-      reply(reply_token, answer);
+      if (answer === "ECHO") {
+        reply(reply_token, msg);
+      } else {
+        reply(reply_token, answer);
+      }
     }
   );
   res.sendStatus(200);
