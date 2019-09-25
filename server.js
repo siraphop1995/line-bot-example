@@ -8,7 +8,7 @@ const cp = require("child_process");
 const ngrok = require("ngrok");
 
 // create LINE SDK config from env variables
-const config = require("../config.json");
+const config = require("./config.json");
 
 // base URL for webhook server
 let baseURL = process.env.BASE_URL;
