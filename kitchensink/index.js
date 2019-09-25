@@ -117,6 +117,7 @@ function handleEvent(event) {
 function handleText(message, replyToken, source) {
   const buttonsImageURL = `${baseURL}/static/buttons/1040.jpg`;
   console.log(message.text);
+  console.log('test')
   switch (message.text) {
     case "help":
       // return replyText(replyToken, [
