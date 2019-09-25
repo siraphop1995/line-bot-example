@@ -119,10 +119,16 @@ function handleText(message, replyToken, source) {
 
   switch (message.text) {
     case "help":
+      // return replyText(replyToken, [
+      //   "profile, buttons, confirm, carousel",
+      //   "image carousel, datetime, imagemap, bye"
+      // ]);
+
       return replyText(replyToken, [
-        "profile, buttons, confirm, carousel",
-        "image carousel, datetime, imagemap, bye"
-      ]);
+        `Display name:`,
+        `Status message:`
+      ])
+
     case "profile":
       if (source.userId) {
         return client
