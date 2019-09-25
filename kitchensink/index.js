@@ -116,7 +116,7 @@ function handleEvent(event) {
 
 function handleText(message, replyToken, source) {
   const buttonsImageURL = `${baseURL}/static/buttons/1040.jpg`;
-
+  console.log(message.text);
   switch (message.text) {
     case "help":
       // return replyText(replyToken, [
@@ -124,10 +124,7 @@ function handleText(message, replyToken, source) {
       //   "image carousel, datetime, imagemap, bye"
       // ]);
 
-      return replyText(replyToken, [
-        `Display name:`,
-        `Status message:`
-      ])
+      return replyText(replyToken, [`Display name:`, `Status message:`]);
 
     case "profile":
       if (source.userId) {
