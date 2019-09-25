@@ -11,7 +11,9 @@ const ngrok = require('ngrok');
 const config = require('./config.json');
 
 // base URL for webhook server
-let baseURL = process.env.BASE_URL;
+// let baseURL = process.env.BASE_URL;
+let baseURL = config.BASE_URL;
+
 
 // create LINE SDK client
 const client = new line.Client(config);
@@ -109,8 +111,9 @@ function handleEvent(event) {
 }
 
 function handleText(message, replyToken, source) {
+  let baseUrl = 'https://57d823ad.ngrok.io'
   const buttonsImageURL = `${baseURL}/static/buttons/1040.jpg`;
-  console.log(baseURL)
+console.log(buttonsImageURL)
   switch (message.text) {
     case 'profile':
       if (source.userId) {
