@@ -111,10 +111,10 @@ function handleEvent(event) {
 }
 
 function handleText(message, replyToken, source) {
-  let baseUrl = 'https://57d823ad.ngrok.io'
   const buttonsImageURL = `${baseURL}/static/buttons/1040.jpg`;
-console.log(buttonsImageURL)
+  
   switch (message.text) {
+    case 'help': return replyText(replyToken, message.text);
     case 'profile':
       if (source.userId) {
         return client.getProfile(source.userId)
