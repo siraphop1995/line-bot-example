@@ -3,6 +3,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const request = require("request");
+const config = require("../config.json");
+
 const app = express();
 const port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -18,7 +20,7 @@ app.listen(port, () => {
 function reply(reply_token) {
   let headers = {
     "Content-Type": "application/json",
-    Authorization: "Bearer {xxxxxxx}"
+    Authorization: "Bearer " + config.channelAccessToken
   };
   let body = JSON.stringify({
     replyToken: reply_token,

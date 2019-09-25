@@ -3,6 +3,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const request = require("request");
+const config = require("../config.json");
 const AIMLInterpreter = require("aimlinterpreter");
 
 const app = express();
@@ -33,7 +34,7 @@ app.listen(port, () => {
 function reply(reply_token, msg) {
   let headers = {
     "Content-Type": "application/json",
-    Authorization: "Bearer {xxxxx}"
+    Authorization: "Bearer " + config.channelAccessToken
   };
 
   let body = JSON.stringify({
