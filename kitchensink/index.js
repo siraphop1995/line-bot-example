@@ -109,9 +109,8 @@ function handleEvent(event) {
 }
 
 function handleText(message, replyToken, source) {
-  baseURL = '.'
-  const buttonsImageURL = `./static/buttons/1040.jpg`;
-console.log(buttonsImageURL)
+  const buttonsImageURL = `${baseURL}/static/buttons/1040.jpg`;
+  console.log(baseURL)
   switch (message.text) {
     case 'profile':
       if (source.userId) {
