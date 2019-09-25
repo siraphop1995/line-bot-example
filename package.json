@@ -1,0 +1,24 @@
+{
+  "name": "simple-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "basic": "node ./basic/server.js",
+    "ngrok": "node ./ngrok/index.js",
+    "aiml": "node ./aiml/app3.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@line/bot-sdk": "^6.8.2",
+    "aimlinterpreter": "^0.1.7",
+    "body-parser": "^1.14.1",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "express": "^4.13.3",
+    "request": "^2.88.0"
+  }
+}
